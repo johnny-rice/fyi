@@ -1,4 +1,7 @@
 # Using Prebuild without NPM access
+
+> This approach is no longer needed for `prebuild` as of Expo SDK 54. It still applies on previous SDK's and for other commands that download templates, such as `create-expo-app` and `create-expo-module`.
+
 Within some corporate networks, direct access to NPM may be disabled, with all package installs going through a private repository like AWS CodeArtifact. Most Expo CLI commands that interact with package managers (such as `npx expo install`) utilize **.npmrc** and any embedded auth tokens. However, `npx expo prebuild` is not currently able to pass these auth tokens while downloading the native project template that's that Prebuild uses when generating your native code. You can work around this by specifying a template (either from Github of a local file) and passing it as a parameter to the Prebuild command.
 
 ## Using a template from Github
